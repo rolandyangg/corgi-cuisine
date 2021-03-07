@@ -1,63 +1,31 @@
-/*
-  Button
-
-  Turns on and off a light emitting diode(LED) connected to digital pin 13,
-  when pressing a pushbutton attached to pin 2.
-
-  The circuit:
-  - LED attached from pin 13 to ground
-  - pushbutton attached to pin 2 from +5V
-  - 10K resistor attached to pin 2 from ground
-
-  - Note: on most Arduinos there is already an LED on the board
-    attached to pin 13.
-
-  created 2005
-  by DojoDave <http://www.0j0.org>
-  modified 30 Aug 2011
-  by Tom Igoe
-
-  This example code is in the public domain.
-
-  http://www.arduino.cc/en/Tutorial/Button
+/**
+ * Smart Petfood Dispenser 
+ * @fanman, @sanjitdaddy, @roland
 */
+//#include <LiquidCrystal.h>
+const int LED = 13; // Led Light
+const int RELAY = 8; // Dispenser Relay
+const int BUTTON = 3; // Button
 
-// constants won't change. They're used here to set pin numbers:
-const int buttonPin = 3;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
-const int relayPin = 8;
-const bool debug = false;
-
-// variables will change:
-int buttonState = 0;         // variable for reading the pushbutton status
+int buttonState = 0;
 
 void setup() {
-  // initialize the LED pin as an output:
-  pinMode(ledPin, OUTPUT);
-  pinMode(relayPin, OUTPUT);
-  // initialize the pushbutton pin as an input:
-  pinMode(buttonPin, INPUT);
+  pinMode(LED, OUTPUT);
+  pinMode(RELAY, OUTPUT);
+  pinMode(BUTTON, INPUT);
+  
+  digitalWrite(RELAY, HIGH); // Turn off the relay at the start
 }
 
 void loop() {
-  // read the state of the pushbutton value:
-  buttonState = digitalRead(buttonPin);
-
-  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  buttonState = digitalRead(BUTTON);
+  
   if (buttonState == HIGH) {
-    digitalWrite(ledPin, HIGH);
-    digitalWrite(relayPin, HIGH);
+    digitalWrite(LED, HIGH);
+    digitalWrite(RELAY, LOW);
     delay(500);
-    digitalWrite(ledPin, LOW);
-    delay(500);
-    digitalWrite(ledPin, HIGH);
-    delay(500);
-    digitalWrite(ledPin, LOW);
-  }
-    /*
-    digitalWrite(ledPin, HIGH);
-    delay(200);
-    digitalWrite(ledPin, LOW);
-    delay(200);*/
+    digitalWrite(LED, LOW);
+    digitalWrite(RELAY, HIGH);
   }
 
+}
