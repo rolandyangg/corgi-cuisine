@@ -2,7 +2,7 @@
  * Smart Petfood Dispenser 
  * @fanman, @sanjitdaddy, @roland
 */
-//#include <LiquidCrystal.h>
+#include <LiquidCrystal.h>
 const int LED = 13; // Led Light
 const int RELAY = 8; // Dispenser Relay
 const int BUTTON = 3; // Button
@@ -15,6 +15,7 @@ void setup() {
   pinMode(BUTTON, INPUT);
   
   digitalWrite(RELAY, HIGH); // Turn off the relay at the start
+  // lcd.print("hello, world!");
 }
 
 void loop() {
