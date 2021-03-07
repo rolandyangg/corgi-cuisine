@@ -184,12 +184,12 @@ void dispense() {
   digitalWrite(RELAY, LOW);
   digitalWrite(GREEN_LED, LOW);
   for (int i = 0; i < 4; i++) {
-  fakeDelay(250);
+  fakeDelay(300);
   digitalWrite(RELAY, HIGH);
-  fakeDelay(250);
+  fakeDelay(300);
   digitalWrite(RELAY, LOW);
   }
-  fakeDelay(250);
+  fakeDelay(300);
   digitalWrite(RELAY, HIGH);
   // Setup timer
   endTime = millis() + COOLDOWN; // Does not account for the 50 day overflow
