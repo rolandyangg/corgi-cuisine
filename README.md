@@ -6,7 +6,7 @@
 ![inside-design](images/InnerDesign.jpg)
 ![tinkerCAD-prototype](images/TinkerCADPrototype.png)
 
-**MLH CorgiHacks Project**
+**MLH CorgiHacks Project** 
 
 - A Corgi-themed Arduino automatic smart pet feeder
 
