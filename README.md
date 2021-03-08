@@ -12,7 +12,7 @@
 
 ## Authors
 - Aaron Fan @fanman1
-- Sanjit Ravichandran @sanjitrav 
+- Sanjit Ravichandran @sanjitravi 
 - Roland Yang @whyroland
 
 ## What it Uses
