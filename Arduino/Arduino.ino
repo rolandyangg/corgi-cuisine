@@ -2,8 +2,6 @@
  * Smart Petfood Dispenser 
  * @fanman, @sanjit, @roland
 */
-// #include "pitches.h"
-
 #define NOTE_B0  31
 #define NOTE_C1  33
 #define NOTE_CS1 35
@@ -143,12 +141,10 @@ void loop() {
   buttonState = digitalRead(BUTTON);
   
   if (buttonState == HIGH) {
-    if (digitalRead(GREEN_LED) == HIGH) { // Valid to press, make sure the Corgi does not become overweight by eating too much!!!
+    if (digitalRead(GREEN_LED) == HIGH) // Valid to press, make sure the Corgi does not become overweight by eating too much!!!
       dispense();
-    } 
-    else { // Not valid to press, must wait for the cooldown time
+    else // Not valid to press, must wait for the cooldown time
       error();
-    }
   }
   else if (isInCooldown && millis() > endTime) { // Checks the cooldown
       playSong(melody1, noteDurations1);
@@ -167,7 +163,6 @@ void loop() {
         dispense();
       }
   }
-
 }
 
 void fakeDelay(int time) {
